@@ -42,7 +42,7 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="1" attributes="0">
-              <EmptySpace pref="65" max="32767" attributes="0"/>
+              <EmptySpace pref="53" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
                   <Component id="jPanel2" min="-2" max="-2" attributes="0"/>
@@ -78,10 +78,10 @@
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="1" attributes="0">
-                  <EmptySpace pref="140" max="32767" attributes="0"/>
-                  <Component id="jLabel4" min="-2" pref="82" max="-2" attributes="0"/>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="jComboOriginCity" min="-2" pref="118" max="-2" attributes="0"/>
+                  <EmptySpace pref="84" max="32767" attributes="0"/>
+                  <Component id="jLabel4" min="-2" pref="164" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="jComboMovieName" min="-2" pref="118" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="247" max="-2" attributes="0"/>
               </Group>
           </Group>
@@ -91,7 +91,7 @@
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace pref="52" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jComboOriginCity" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jComboMovieName" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel4" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
@@ -100,7 +100,7 @@
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JComboBox" name="jComboOriginCity">
+        <Component class="javax.swing.JComboBox" name="jComboMovieName">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
               <StringArray count="4">
@@ -117,7 +117,7 @@
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel4">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Filter by Origin:"/>
+            <Property name="text" type="java.lang.String" value="Filter by Movie:"/>
           </Properties>
         </Component>
       </SubComponents>
@@ -133,24 +133,21 @@
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="jLabel2" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabel5" alignment="0" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace max="32767" attributes="0"/>
+                  <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace pref="582" max="32767" attributes="0"/>
               </Group>
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace pref="252" max="32767" attributes="0"/>
                   <Component id="JPrevButton" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Component id="JBidButton" min="-2" max="-2" attributes="0"/>
+                  <Component id="JBuyButton" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Component id="JNextButton" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="158" max="-2" attributes="0"/>
               </Group>
               <Group type="102" attributes="0">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="JLabelContractCount" min="-2" max="-2" attributes="0"/>
+                      <Component id="JLabelMovieCount" min="-2" max="-2" attributes="0"/>
                       <Group type="102" alignment="0" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="jLabel1" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -158,10 +155,9 @@
                           </Group>
                           <EmptySpace min="-2" pref="94" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="JLabelOrderItem" min="-2" max="-2" attributes="0"/>
-                              <Component id="JLabelDestCity" min="-2" max="-2" attributes="0"/>
-                              <Component id="JLabelOriginCity" min="-2" max="-2" attributes="0"/>
-                              <Component id="JLabelContractID" min="-2" max="-2" attributes="0"/>
+                              <Component id="JLabelActors" min="-2" max="-2" attributes="0"/>
+                              <Component id="JLabelRate" min="-2" max="-2" attributes="0"/>
+                              <Component id="JLabelMovieName" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -175,38 +171,26 @@
                   <EmptySpace min="-2" pref="92" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="JLabelContractID" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="JLabelMovieName" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="61" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="JLabelOriginCity" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="JLabelRate" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="JLabelDestCity" min="-2" max="-2" attributes="0"/>
+                      <Component id="JLabelActors" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" attributes="0">
-                          <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
-                          <Component id="JLabelOrderItem" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="57" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="1" attributes="0">
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="JBidButton" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="JPrevButton" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="JNextButton" alignment="3" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
-                      </Group>
+                  <EmptySpace min="-2" pref="76" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="JBuyButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="JPrevButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="JNextButton" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
-                  <Component id="JLabelContractCount" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
+                  <Component id="JLabelMovieCount" min="-2" max="-2" attributes="0"/>
                   <EmptySpace pref="51" max="32767" attributes="0"/>
               </Group>
           </Group>
@@ -220,37 +204,27 @@
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel2">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Origin:"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JLabel" name="jLabel5">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Order:"/>
+            <Property name="text" type="java.lang.String" value="Rate:"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel3">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Destination:"/>
+            <Property name="text" type="java.lang.String" value="Actors:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="JLabelContractCount">
+        <Component class="javax.swing.JLabel" name="JLabelMovieCount">
           <Properties>
             <Property name="text" type="java.lang.String" value="n out of x Contracts"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="JLabelContractID">
+        <Component class="javax.swing.JLabel" name="JLabelMovieName">
         </Component>
-        <Component class="javax.swing.JLabel" name="JLabelOriginCity">
+        <Component class="javax.swing.JLabel" name="JLabelRate">
           <Properties>
             <Property name="text" type="java.lang.String" value=" "/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="JLabelDestCity">
-          <Properties>
-            <Property name="text" type="java.lang.String" value=" "/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JLabel" name="JLabelOrderItem">
+        <Component class="javax.swing.JLabel" name="JLabelActors">
           <Properties>
             <Property name="text" type="java.lang.String" value=" "/>
           </Properties>
@@ -260,9 +234,9 @@
             <Property name="text" type="java.lang.String" value="Previous"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="JBidButton">
+        <Component class="javax.swing.JButton" name="JBuyButton">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Bid"/>
+            <Property name="text" type="java.lang.String" value="Buy"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JButton" name="JNextButton">

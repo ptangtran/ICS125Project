@@ -10,40 +10,41 @@ package selectmovie;
  *
  * @author C0472359
  */
+    //ALL NAMES HAVE BEEN CHANGED.
 public class Movie {
     public static final int NUMBER_OF_CONTRACT_ATTRIBUTES=3;
     public static final int INDEX_OF_MOVIE_NAME=0;
-    public static final int INDEX_OF_RATE=1;
+    public static final int INDEX_OF_RATING=1;
     public static final int INDEX_OF_ACTORS=2;
     //public static final int INDEX_OF_ORDER_ITEM=3;
     String movieName;
-     String rate;
+     String rating;
      String actors;
      //String orderItem;
     //public Movie (String contractID, String originCity, String destCity, String orderItem){
-    public Movie (String movieName, String rate, String actors){
+    public Movie (String movieName, String rating, String actors){
         //this.contractID = contractID;
         this.movieName = movieName;
-
-        this.rate = rate;
+        this.rating = rating;
         this.actors = actors;
   
     }
-    public String getContractID(){
-        return contractID;
+    public String getMovieName(){
+        //return contractID;
+        return movieName;
     }
-    public String getOriginCity(){
-        return originCity;
+    public String getRating(){
+        return rating;
     }
-    public String getDestCity(){
-        return destCity;
-    }
-    public String getOrderItem(){
-        return orderItem;
+    public String getActors(){
+        return actors;
     }
 
-    boolean contains(String city) {
-        if(city.equals(originCity)) {
+    
+    //boolean contains(String city) {
+        //if(city.equals(originCity)) {
+    boolean contains(String movie) {
+        if(movie.equals(movie)) {
             return true;
         }
         else{
@@ -51,5 +52,5 @@ public class Movie {
         }
         //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    
+
 }

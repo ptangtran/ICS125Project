@@ -25,41 +25,44 @@ class MovieController {
     theView = movieView;
     theModel = movieModel;
     this.theView.addPrevListener(new PrevButtonListener());
-    this.theView.addBidListener(new BuyButtonListener());
+    this.theView.addBuyListener(new BuyButtonListener());
     this.theView.addNextListener(new NextButtonListener());
     this.theView.addcomboBoxListener(new ComboListener());
     setUpDisplay();
     //step 12
-    theView.setOriginCityList(theModel.getOriginCityList());
+    //theView.setOriginCityList(theModel.getOriginCityList());
+    theView.setMovieList(theModel.getMovieList());
     }
     //FINISH LATER BC U DED AF
   private void setUpDisplay() {
       try{
-          if(theModel.foundContracts()){
+          //if(theModel.foundContracts()){
+          if(theModel.foundMovies()){
               Movie c = theModel.getTheMovie();
                       //theView.setContractID(c.getContractID());
                       //theView.setDestCity(c.getDestCity());
+                        //theView.setOriginCity(c.getOriginCity());
+                      //theView.setOrderItem(c.getOrderItem()); 
                       theView.setMovieName(c.getMovieName());
                       theView.setRating(c.getRating());
                       theView.setActors(c.getActors());
-                      //theView.setOriginCity(c.getOriginCity());
-                      //theView.setOrderItem(c.getOrderItem());
+                      
           }else {
           theView.setMovieName("N/A");
           theView.setRating("N/A");
           theView.setActors("N/A");
         }
-          theView.updateMovieViewPanel(theModel.getCurrentContractNum(), theModel.getContractCount());
+          theView.updateMovieViewPanel(theModel.getCurrentMovieNum(), theModel.getMovieCount());
       }catch (Error ex){
           System.out.println(ex);
-          theView.displayErrorMessage("Error: There was a problem setting the contract.\n" + "             contract Number: " + theModel.getCurrentContractNum());
+          theView.displayErrorMessage("Error: There was a problem setting the contract.\n" + "             contract Number: " + theModel.getCurrentMovieNum());
       }
   } 
   class PrevButtonListener implements ActionListener {
       @Override
       public void actionPerformed(ActionEvent e){
           //change currentcontractnum
-          if (theModel.getCurrentContractNum() ==0){
+          if (theModel.getCurrentMovieNum() ==0){
               return;
           }
           try{
@@ -77,7 +80,7 @@ class MovieController {
   class NextButtonListener implements ActionListener {
       @Override
       public void actionPerformed(ActionEvent e){
-          if (theModel.getCurrentContractNum() >= theModel.getContractCount() -1){
+          if (theModel.getCurrentMovieNum() >= theModel.getMovieCount() -1){
               return;
           }
           try{
@@ -100,13 +103,13 @@ class MovieController {
                String selectedMovie = e.getItem().toString();
                //String selectedCity = e.getItem().toString();
                System.out.println(selectedMovie);
-               theModel.updateContractList(selectedMovie);
+               theModel.updateMovieList(selectedMovie);
                setUpDisplay();
            } //end if
        } // end itemStateChanged
    } // end ComboListener
    
-   class BidButtonListener implements ActionListener {
+   class BuyButtonListener implements ActionListener {
       @Override
       public void actionPerformed(ActionEvent e){
           try{

@@ -28,72 +28,102 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="117" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="1" attributes="0">
+              <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" max="-2" attributes="0">
                   <Group type="102" attributes="0">
-                      <Component id="jLabelContractID" min="-2" pref="53" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="163" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="jLabelChild" alignment="0" min="-2" pref="69" max="-2" attributes="0"/>
+                          <Component id="jLabelAdult" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabelSenior" alignment="0" min="-2" max="-2" attributes="0"/>
+                      </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="jLabelOrigin" min="-2" pref="58" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="jSpinnerChild" pref="47" max="32767" attributes="0"/>
+                          <Component id="jSpinnerAdult" max="32767" attributes="0"/>
+                          <Component id="jSpinnerSenior" alignment="0" max="32767" attributes="0"/>
+                      </Group>
                   </Group>
-                  <Group type="103" alignment="1" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="1" attributes="0">
                       <Component id="jButtonSave" min="-2" max="-2" attributes="0"/>
-                      <Component id="jTextName" min="-2" pref="93" max="-2" attributes="0"/>
-                  </Group>
-              </Group>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="jLabelDestination" min="-2" pref="69" max="-2" attributes="0"/>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="jLabelOrder" min="-2" pref="119" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
-                      <Component id="jSpinner1" min="-2" pref="99" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="jButtonCancel" min="-2" max="-2" attributes="0"/>
                   </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <Component id="jLabelEmail" min="-2" pref="93" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Component id="jTextEmail" min="-2" pref="208" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
+                  </Group>
               </Group>
-              <EmptySpace pref="166" max="32767" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
+          </Group>
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="0" pref="10" max="32767" attributes="0"/>
+              <Component id="jLabelMovieName" min="-2" pref="93" max="-2" attributes="0"/>
+              <EmptySpace pref="120" max="32767" attributes="0"/>
+              <Component id="jLabelRate" min="-2" pref="58" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="87" max="-2" attributes="0"/>
+              <Component id="jLabelDestination" min="-2" pref="141" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="111" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="134" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jLabelContractID" alignment="3" min="-2" pref="32" max="-2" attributes="0"/>
-                  <Component id="jLabelOrigin" alignment="3" min="-2" pref="32" max="-2" attributes="0"/>
-                  <Component id="jLabelDestination" alignment="3" min="-2" pref="32" max="-2" attributes="0"/>
-                  <Component id="jLabelOrder" alignment="3" min="-2" pref="32" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="jLabelMovieName" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
+                          <Component id="jLabelRate" alignment="3" min="-2" pref="32" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
+                      <Component id="jLabelDestination" min="-2" pref="42" max="-2" attributes="0"/>
+                  </Group>
               </Group>
-              <EmptySpace min="-2" pref="106" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jTextName" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jSpinner1" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLabelChild" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jSpinnerChild" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="78" max="32767" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jButtonSave" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLabelAdult" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jSpinnerAdult" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="jLabelSenior" min="-2" max="-2" attributes="0"/>
+                  <Component id="jSpinnerSenior" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="77" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jLabelEmail" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
+                  <Component id="jTextEmail" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace pref="102" max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jButtonCancel" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jButtonSave" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="59" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="javax.swing.JLabel" name="jLabelContractID">
+    <Component class="javax.swing.JLabel" name="jLabelMovieName">
       <Properties>
-        <Property name="text" type="java.lang.String" value="ContractID"/>
+        <Property name="text" type="java.lang.String" value="Movie Name"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabelOrigin">
+    <Component class="javax.swing.JLabel" name="jLabelRate">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Origin"/>
+        <Property name="text" type="java.lang.String" value="Rate"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabelDestination">
@@ -101,17 +131,12 @@
         <Property name="text" type="java.lang.String" value="Destination "/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabelOrder">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Order"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JTextField" name="jTextName">
+    <Component class="javax.swing.JTextField" name="jTextEmail">
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextNameActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextEmailActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JSpinner" name="jSpinner1">
+    <Component class="javax.swing.JSpinner" name="jSpinnerChild">
     </Component>
     <Component class="javax.swing.JButton" name="jButtonSave">
       <Properties>
@@ -125,6 +150,30 @@
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonCancelActionPerformed"/>
       </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabelChild">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Child"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabelAdult">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Adult"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JSpinner" name="jSpinnerAdult">
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabelSenior">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Senior"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JSpinner" name="jSpinnerSenior">
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabelEmail">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Email"/>
+      </Properties>
     </Component>
   </SubComponents>
 </Form>

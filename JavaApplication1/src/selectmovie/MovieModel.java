@@ -17,9 +17,9 @@ import java.util.TreeSet;
  * @author C0472359
  */
 class MovieModel {
-    private ArrayList<Movie> theContracts;
-    private int contractCounter;
-    private ArrayList<Movie> theContractsAll;
+    private ArrayList<Movie> theMovies;
+    private int movieCounter;
+    private ArrayList<Movie> theMoviesAll;
     //step 7
     //private SortedSet<String> originCityList;
     private SortedSet<String> movieList;
@@ -41,20 +41,21 @@ class MovieModel {
         String[] tokens = line.split(",", Movie.NUMBER_OF_CONTRACT_ATTRIBUTES);
         
         // String contractID = tokens[Contract.INDEX_OF_CONTRACT_ID];
-        String movieName = tokens[Movie.INDEX_OF_CONTRACT_ID];
-        String rate = tokens[Movie.INDEX_OF_ORIGIN_CITY];
-        String actors = tokens[Movie.INDEX_OF_DEST_CITY];
+        String movieName = tokens[Movie.INDEX_OF_MOVIE_NAME];
+        String rate = tokens[Movie.INDEX_OF_RATING];
+        String actors = tokens[Movie.INDEX_OF_ACTORS];
    
         //Contract dataContract = new Contract(contractID, originCity, destCity, orderItem);
         Movie dataMovie = new Movie(movieName, rate, actors);
         
-        originCityList.add(originCity);
-        theContracts.add(dataContract);
+        //originCityList.add(originCity);
+        movieList.add(movieName);
+        theMovies.add(dataMovie);
     }   //end while
     //step 8 
-    originCityList.add("All");
+    movieList.add("All");
     //step 9 
-    theContractsAll = new ArrayList<>(theContracts);
+    theMoviesAll = new ArrayList<>(theMovies);
     fileReader.close();
     }
     catch(IOException ex){
@@ -62,8 +63,8 @@ class MovieModel {
             }
     
     } //end of constructor 
-    boolean foundContracts(){
-        if(theContracts.size() >= 1){
+    boolean foundMovies(){
+        if(theMovies.size() >= 1){
             return true;
         }
         else{
@@ -71,42 +72,47 @@ class MovieModel {
         }
     }
     
-    public Contract getTheContract(){
-        return theContracts.get(contractCounter);
+    //public Contract getTheContract(){
+    public Movie getTheMovie(){    
+        //return theContracts.get(contractCounter);
+        return theMovies.get(movieCounter);
     }
-    public int getContractCount(){
-        return theContracts.size();
+    //public int getMovieCount(){
+    public int getMovieCount(){    
+        return theMovies.size();
         //called in setupdisplay method
     }
     //called in setUpDisplay method
-    public int getCurrentContractNum(){
-        return contractCounter;
+    public int getCurrentMoviesNum(){
+        return movieCounter;
     }
-    public void nextContract(){
-        if (contractCounter + 1 <= theContracts.size()){
-            contractCounter++;
+    //public void nextContract(){
+    public void nextMovie(){
+        if (movieCounter + 1 <= theMovies.size()){
+            movieCounter++;
         }
     }
-    public void prevContract(){
-        if (contractCounter > 0){
-            contractCounter--;
+    public void prevMovie(){
+        if (movieCounter > 0){
+            movieCounter--;
     }   
     }
     
-    public String[] getOriginCityList(){
+    public String[] getMovieList(){
         String[] a;
-        a= originCityList.toArray(new String[originCityList.size()]);
+        a= movieList.toArray(new String[movieList.size()]);
         return a;
     }
-    
-    public void updateContractList(String city){
-        theContracts = new ArrayList<>(theContractsAll);
-        if (!city.equals("All")){
-            theContracts.removeIf(s -> !s.contains(city));
+    //public void updateContractList(String city){
+    public void updateMovieList(String movie){
+        //theContracts = new ArrayList<>(theContractsAll);
+        theMovies = new ArrayList<>(theMoviesAll);
+        if (!movie.equals("All")){
+            theMovies.removeIf(s -> !s.contains(movie));
         }
         // lynda suggestion 
         //System.out.print(city);
-        contractCounter=0;
+        movieCounter=0;
     }
   
 }

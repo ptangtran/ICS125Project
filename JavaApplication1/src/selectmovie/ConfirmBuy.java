@@ -22,14 +22,14 @@ public class ConfirmBuy extends javax.swing.JDialog {
     /**
      * Creates new form java
      */
-    public ConfirmBuy(JFrame f, boolean m, Contract theContract) {
+    public ConfirmBuy(JFrame f, boolean m, Movie theMovie) {
         super(f, m);
         initComponents();
-        this.jLabelContractID.setText(theContract.getContractID());
-        this.jLabelOrigin.setText(theContract.getOriginCity());
-        this.jLabelDestination.setText(theContract.getDestCity());
-        this.jLabelOrder.setText(theContract.getOrderItem());
-        
+        this.jLabelMovieName.setText(theMovie.getMovieName());
+        this.jLabelRate.setText(theMovie.getRating());
+        //this.jLabelActors.setText(theMovie.getActors()); CHECK THIS UNSURE
+        //this.jLabelOrder.setText(theMovie.getOrderItem());
+        /* THIS IS BIDDING NUMBERS 
         Integer startValue = 100;
         Integer minValue = 100;
         Integer maxValue = 10000;
@@ -37,6 +37,7 @@ public class ConfirmBuy extends javax.swing.JDialog {
         SpinnerModel numModel = new SpinnerNumberModel(startValue, minValue, maxValue, stepValue);
         jSpinner1.setModel(numModel);
         String optionsFileName = System.getProperty("user.dir")+ "M:\\reyesingridj11\\SelectContract\\src\\selectcontract\\output_bids.txt";
+        */
     }
 
     /**
@@ -48,30 +49,33 @@ public class ConfirmBuy extends javax.swing.JDialog {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabelContractID = new javax.swing.JLabel();
-        jLabelOrigin = new javax.swing.JLabel();
+        jLabelMovieName = new javax.swing.JLabel();
+        jLabelRate = new javax.swing.JLabel();
         jLabelDestination = new javax.swing.JLabel();
-        jLabelOrder = new javax.swing.JLabel();
-        jTextName = new javax.swing.JTextField();
-        jSpinner1 = new javax.swing.JSpinner();
+        jTextEmail = new javax.swing.JTextField();
+        jSpinnerChild = new javax.swing.JSpinner();
         jButtonSave = new javax.swing.JButton();
         jButtonCancel = new javax.swing.JButton();
+        jLabelChild = new javax.swing.JLabel();
+        jLabelAdult = new javax.swing.JLabel();
+        jSpinnerAdult = new javax.swing.JSpinner();
+        jLabelSenior = new javax.swing.JLabel();
+        jSpinnerSenior = new javax.swing.JSpinner();
+        jLabelEmail = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Place bid on selected contract");
         setBackground(new java.awt.Color(255, 204, 204));
 
-        jLabelContractID.setText("ContractID");
+        jLabelMovieName.setText("Movie Name");
 
-        jLabelOrigin.setText("Origin");
+        jLabelRate.setText("Rate");
 
         jLabelDestination.setText("Destination ");
 
-        jLabelOrder.setText("Order");
-
-        jTextName.addActionListener(new java.awt.event.ActionListener() {
+        jTextEmail.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextNameActionPerformed(evt);
+                jTextEmailActionPerformed(evt);
             }
         });
 
@@ -84,52 +88,84 @@ public class ConfirmBuy extends javax.swing.JDialog {
             }
         });
 
+        jLabelChild.setText("Child");
+
+        jLabelAdult.setText("Adult");
+
+        jLabelSenior.setText("Senior");
+
+        jLabelEmail.setText("Email");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(117, 117, 117)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabelContractID, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(163, 163, 163)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabelChild, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabelAdult)
+                            .addComponent(jLabelSenior))
                         .addGap(18, 18, 18)
-                        .addComponent(jLabelOrigin, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jSpinnerChild, javax.swing.GroupLayout.DEFAULT_SIZE, 47, Short.MAX_VALUE)
+                            .addComponent(jSpinnerAdult)
+                            .addComponent(jSpinnerSenior)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(jButtonSave)
-                        .addComponent(jTextName, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGap(18, 18, 18)
+                        .addComponent(jButtonCancel))
                     .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabelDestination, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabelOrder, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(26, 26, 26)
-                        .addComponent(jSpinner1, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(34, 34, 34)
-                        .addComponent(jButtonCancel)))
-                .addContainerGap(166, Short.MAX_VALUE))
+                        .addComponent(jLabelEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jTextEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(9, 9, 9)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(0, 10, Short.MAX_VALUE)
+                .addComponent(jLabelMovieName, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 120, Short.MAX_VALUE)
+                .addComponent(jLabelRate, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(87, 87, 87)
+                .addComponent(jLabelDestination, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(111, 111, 111))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(134, 134, 134)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(49, 49, 49)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabelMovieName, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabelRate, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(47, 47, 47)
+                        .addComponent(jLabelDestination, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabelContractID, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabelOrigin, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabelDestination, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabelOrder, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(106, 106, 106)
+                    .addComponent(jLabelChild)
+                    .addComponent(jSpinnerChild, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jSpinner1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 78, Short.MAX_VALUE)
+                    .addComponent(jLabelAdult)
+                    .addComponent(jSpinnerAdult, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabelSenior)
+                    .addComponent(jSpinnerSenior, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(77, 77, 77)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButtonSave)
-                    .addComponent(jButtonCancel))
-                .addGap(37, 37, 37))
+                    .addComponent(jLabelEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 102, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButtonCancel)
+                    .addComponent(jButtonSave))
+                .addGap(59, 59, 59))
         );
 
         pack();
@@ -148,24 +184,41 @@ public class ConfirmBuy extends javax.swing.JDialog {
         // TODO add your handling code here:
         //step 22
        //System.out.println(jSpinner1.getValue());
-       int bidAmount;
-       bidAmount = Integer.getInteger(jSpinner1.getValue().toString(), 100);
-        String bids = jSpinner1.getValue().toString();
+       
+                    //NEEDS MODIFYING 
+       int childAmount;
+       childAmount = Integer.getInteger(jSpinnerChild.getValue().toString(), 100);
+        String childz = jSpinnerChild.getValue().toString();
+        int adultAmount;
+        adultAmount = Integer.getInteger(jSpinnerChild.getValue().toString(), 100);
+        int seniorAmount;
+        seniorAmount = Integer.getInteger(jSpinnerChild.getValue().toString(), 100);
+        /*
         ZonedDateTime currentDate;
         currentDate = ZonedDateTime.now();
         String dates = ZonedDateTime.now().toString();
-        String filename ="\\src\\selectcontract\\output_bid.txt";
+        */
+        //String filename ="\\src\\selectcontract\\output_bid.txt";
+        String filename ="\\src\\selectcontract\\output_movie.txt";
         
-        
+        //THIS IS ORDER SUMMARY 
         try {
         FileWriter fileWriter = new FileWriter(filename);
         BufferedWriter br = new BufferedWriter(fileWriter);
-        String name = JTextName.getText();
-        String id = jLabelContractID.getText();
-        br.append(name);
-        br.append(id);
-        br.append(bids);
-        br.append(dates);
+        //customer name
+        // DO WE NEED THIS? String name = JTextName.getText();
+        String movieName = jLabelMovieName.getText();
+        //String rate= jLabelRate.getText();
+        //String total = jLabelTotal.getText();
+        String email = jTextEmail.toString();
+        //br.append(name);
+        br.append(movieName);
+        //WE ADDED THIS 
+        br.append(email);
+        //NEED TO APPEND QUANTITY AND TOTAL 
+        //br.append(total);
+        //br.append(bids); CHANGE
+        //br.append(dates); CHANGE
         fileWriter.close();
        
         }
@@ -183,11 +236,16 @@ public class ConfirmBuy extends javax.swing.JDialog {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonCancel;
     private javax.swing.JButton jButtonSave;
-    private javax.swing.JLabel jLabelContractID;
+    private javax.swing.JLabel jLabelAdult;
+    private javax.swing.JLabel jLabelChild;
     private javax.swing.JLabel jLabelDestination;
-    private javax.swing.JLabel jLabelOrder;
-    private javax.swing.JLabel jLabelOrigin;
-    private javax.swing.JSpinner jSpinner1;
-    private javax.swing.JTextField jTextName;
+    private javax.swing.JLabel jLabelEmail;
+    private javax.swing.JLabel jLabelMovieName;
+    private javax.swing.JLabel jLabelRate;
+    private javax.swing.JLabel jLabelSenior;
+    private javax.swing.JSpinner jSpinnerAdult;
+    private javax.swing.JSpinner jSpinnerChild;
+    private javax.swing.JSpinner jSpinnerSenior;
+    private javax.swing.JTextField jTextEmail;
     // End of variables declaration//GEN-END:variables
 }

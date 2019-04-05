@@ -34,20 +34,18 @@ public class MovieView extends javax.swing.JFrame {
 
         jDialog1 = new javax.swing.JDialog();
         jPanel1 = new javax.swing.JPanel();
-        jComboOriginCity = new javax.swing.JComboBox<>();
+        jComboMovieName = new javax.swing.JComboBox<>();
         jLabel4 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        JLabelContractCount = new javax.swing.JLabel();
-        JLabelContractID = new javax.swing.JLabel();
-        JLabelOriginCity = new javax.swing.JLabel();
-        JLabelDestCity = new javax.swing.JLabel();
-        JLabelOrderItem = new javax.swing.JLabel();
+        JLabelMovieCount = new javax.swing.JLabel();
+        JLabelMovieName = new javax.swing.JLabel();
+        JLabelRate = new javax.swing.JLabel();
+        JLabelActors = new javax.swing.JLabel();
         JPrevButton = new javax.swing.JButton();
-        JBidButton = new javax.swing.JButton();
+        JBuyButton = new javax.swing.JButton();
         JNextButton = new javax.swing.JButton();
 
         javax.swing.GroupLayout jDialog1Layout = new javax.swing.GroupLayout(jDialog1.getContentPane());
@@ -66,19 +64,19 @@ public class MovieView extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(153, 255, 102));
 
-        jComboOriginCity.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboMovieName.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
-        jLabel4.setText("Filter by Origin:");
+        jLabel4.setText("Filter by Movie:");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(140, Short.MAX_VALUE)
-                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jComboOriginCity, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(84, Short.MAX_VALUE)
+                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jComboMovieName, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(247, 247, 247))
         );
         jPanel1Layout.setVerticalGroup(
@@ -86,7 +84,7 @@ public class MovieView extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(52, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jComboOriginCity, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jComboMovieName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
@@ -95,23 +93,19 @@ public class MovieView extends javax.swing.JFrame {
 
         jLabel1.setText("Contact ID:");
 
-        jLabel2.setText("Origin:");
+        jLabel2.setText("Rate:");
 
-        jLabel5.setText("Order:");
+        jLabel3.setText("Actors:");
 
-        jLabel3.setText("Destination:");
+        JLabelMovieCount.setText("n out of x Contracts");
 
-        JLabelContractCount.setText("n out of x Contracts");
+        JLabelRate.setText(" ");
 
-        JLabelOriginCity.setText(" ");
-
-        JLabelDestCity.setText(" ");
-
-        JLabelOrderItem.setText(" ");
+        JLabelActors.setText(" ");
 
         JPrevButton.setText("Previous");
 
-        JBidButton.setText("Bid");
+        JBuyButton.setText("Buy");
 
         JNextButton.setText("Next");
         JNextButton.addActionListener(new java.awt.event.ActionListener() {
@@ -125,31 +119,28 @@ public class MovieView extends javax.swing.JFrame {
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel2)
-                    .addComponent(jLabel5))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jLabel2)
+                .addContainerGap(582, Short.MAX_VALUE))
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap(252, Short.MAX_VALUE)
                 .addComponent(JPrevButton)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(JBidButton)
+                .addComponent(JBuyButton)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(JNextButton)
                 .addGap(158, 158, 158))
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(JLabelContractCount)
+                    .addComponent(JLabelMovieCount)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel1)
                             .addComponent(jLabel3))
                         .addGap(94, 94, 94)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(JLabelOrderItem)
-                            .addComponent(JLabelDestCity)
-                            .addComponent(JLabelOriginCity)
-                            .addComponent(JLabelContractID))))
+                            .addComponent(JLabelActors)
+                            .addComponent(JLabelRate)
+                            .addComponent(JLabelMovieName))))
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
@@ -158,31 +149,22 @@ public class MovieView extends javax.swing.JFrame {
                 .addGap(92, 92, 92)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
-                    .addComponent(JLabelContractID))
+                    .addComponent(JLabelMovieName))
                 .addGap(61, 61, 61)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(JLabelOriginCity))
+                    .addComponent(JLabelRate))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(JLabelDestCity)
+                    .addComponent(JLabelActors)
                     .addComponent(jLabel3))
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(30, 30, 30)
-                        .addComponent(JLabelOrderItem)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel5)
-                        .addGap(57, 57, 57))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(JBidButton)
-                            .addComponent(JPrevButton)
-                            .addComponent(JNextButton))
-                        .addGap(22, 22, 22)))
-                .addGap(9, 9, 9)
-                .addComponent(JLabelContractCount)
+                .addGap(76, 76, 76)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(JBuyButton)
+                    .addComponent(JPrevButton)
+                    .addComponent(JNextButton))
+                .addGap(31, 31, 31)
+                .addComponent(JLabelMovieCount)
                 .addContainerGap(51, Short.MAX_VALUE))
         );
 
@@ -191,7 +173,7 @@ public class MovieView extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(65, Short.MAX_VALUE)
+                .addContainerGap(53, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -225,41 +207,45 @@ public class MovieView extends javax.swing.JFrame {
     void addNextListener(ActionListener listenForNextButton){
         JNextButton.addActionListener(listenForNextButton);
     }
-    void addBidListener(ActionListener listenForBidButton){
-        JBidButton.addActionListener(listenForBidButton);
+    //void addBidListener(ActionListener listenForBidButton){
+    void addBuyListener(ActionListener listenForBuyButton){
+        //JBidButton.addActionListener(listenForBidButton);
+        JBuyButton.addActionListener(listenForBuyButton);
     }
     
     void addcomboBoxListener(ItemListener listenForComboBox){
-        jComboOriginCity.addItemListener(listenForComboBox);
+        jComboMovieName.addItemListener(listenForComboBox);
     }
     
     void displayErrorMessage(String errorMessage){
         JOptionPane.showMessageDialog(this,errorMessage);
     }
-    void setContractID(String contractID){
-        JLabelContractID.setText(contractID);
+    //void setContractID(String contractID){
+    void setMovieName(String movieName){  
+        JLabelMovieName.setText(movieName);
     }
-    void setOriginCity(String originCity){
-        JLabelOriginCity.setText(originCity);
+    void setRate(String rate){
+        JLabelRate.setText(rate);
     }
-    void setDestCity(String destCity){
-        JLabelDestCity.setText(destCity);
+    void setActors(String actors){
+        JLabelActors.setText(actors);
     }
+    /*
     void setOrderItem(String orderItem){
         JLabelOrderItem.setText(orderItem);
-    }
-    void setContractCount(String contractCount){
-        JLabelContractCount.setText(contractCount);
+    } */
+    void setMovieCount(String movieCount){
+        JLabelMovieCount.setText(movieCount);
     }
     
-    void updateContractViewPanel(int currentContractNum, int contractCount){
-        setContractCount((1+currentContractNum)+ " of " + contractCount + " contracts");
-        if(currentContractNum==0){
+    void updateMovieViewPanel(int currentMovieNum, int movieCount){
+        setMovieCount((1+currentMovieNum)+ " of " + movieCount + " contracts");
+        if(currentMovieNum==0){
             this.JPrevButton.setEnabled(false);
         }else{
             this.JPrevButton.setEnabled(true);
         }
-        if(currentContractNum==contractCount-1){
+        if(currentMovieNum==movieCount-1){
             this.JNextButton.setEnabled(false);
         } else{
             this.JNextButton.setEnabled(true);
@@ -267,28 +253,27 @@ public class MovieView extends javax.swing.JFrame {
         
     }
     //step 13
-    void setOriginCityList(String[] cityList) {
-        final DefaultComboBoxModel model = new DefaultComboBoxModel(cityList);
+    void setMovieList(String[] movieList) {
+        final DefaultComboBoxModel model = new DefaultComboBoxModel(movieList);
         
-        this.jComboOriginCity.setModel(model);
+        //this.jComboOriginCity.setModel(model);
+        this.jComboMovieName.setModel(model);
     }
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton JBidButton;
-    private javax.swing.JLabel JLabelContractCount;
-    private javax.swing.JLabel JLabelContractID;
-    private javax.swing.JLabel JLabelDestCity;
-    private javax.swing.JLabel JLabelOrderItem;
-    private javax.swing.JLabel JLabelOriginCity;
+    private javax.swing.JButton JBuyButton;
+    private javax.swing.JLabel JLabelActors;
+    private javax.swing.JLabel JLabelMovieCount;
+    private javax.swing.JLabel JLabelMovieName;
+    private javax.swing.JLabel JLabelRate;
     private javax.swing.JButton JNextButton;
     private javax.swing.JButton JPrevButton;
-    private javax.swing.JComboBox<String> jComboOriginCity;
+    private javax.swing.JComboBox<String> jComboMovieName;
     private javax.swing.JDialog jDialog1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     // End of variables declaration//GEN-END:variables
