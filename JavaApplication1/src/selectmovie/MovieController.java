@@ -33,7 +33,6 @@ class MovieController {
     //theView.setOriginCityList(theModel.getOriginCityList());
     theView.setMovieList(theModel.getMovieList());
     }
-    //FINISH LATER BC U DED AF
   private void setUpDisplay() {
       try{
           //if(theModel.foundContracts()){
@@ -44,25 +43,25 @@ class MovieController {
                         //theView.setOriginCity(c.getOriginCity());
                       //theView.setOrderItem(c.getOrderItem()); 
                       theView.setMovieName(c.getMovieName());
-                      theView.setRating(c.getRating());
+                      theView.setRate(c.getRating());
                       theView.setActors(c.getActors());
                       
           }else {
           theView.setMovieName("N/A");
-          theView.setRating("N/A");
+          theView.setRate("N/A");
           theView.setActors("N/A");
         }
-          theView.updateMovieViewPanel(theModel.getCurrentMovieNum(), theModel.getMovieCount());
+          theView.updateMovieViewPanel(theModel.getCurrentMoviesNum(), theModel.getMovieCount());
       }catch (Error ex){
           System.out.println(ex);
-          theView.displayErrorMessage("Error: There was a problem setting the contract.\n" + "             contract Number: " + theModel.getCurrentMovieNum());
+          theView.displayErrorMessage("Error: There was a problem setting the contract.\n" + "             movie: " + theModel.getCurrentMoviesNum());
       }
   } 
   class PrevButtonListener implements ActionListener {
       @Override
       public void actionPerformed(ActionEvent e){
           //change currentcontractnum
-          if (theModel.getCurrentMovieNum() ==0){
+          if (theModel.getCurrentMoviesNum() ==0){
               return;
           }
           try{
@@ -80,7 +79,7 @@ class MovieController {
   class NextButtonListener implements ActionListener {
       @Override
       public void actionPerformed(ActionEvent e){
-          if (theModel.getCurrentMovieNum() >= theModel.getMovieCount() -1){
+          if (theModel.getCurrentMoviesNum() >= theModel.getMovieCount() -1){
               return;
           }
           try{

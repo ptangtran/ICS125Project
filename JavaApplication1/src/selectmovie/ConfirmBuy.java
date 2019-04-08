@@ -5,10 +5,10 @@
  */
 package selectmovie;
 
+import java.awt.event.ActionEvent;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.time.ZonedDateTime;
 import javax.swing.JFrame;
 import javax.swing.SpinnerModel;
 import javax.swing.SpinnerNumberModel;
@@ -18,7 +18,7 @@ import javax.swing.SpinnerNumberModel;
  * @author C0472359
  */
 public class ConfirmBuy extends javax.swing.JDialog {
-
+   
     /**
      * Creates new form java
      */
@@ -29,15 +29,17 @@ public class ConfirmBuy extends javax.swing.JDialog {
         this.jLabelRate.setText(theMovie.getRating());
         //this.jLabelActors.setText(theMovie.getActors()); CHECK THIS UNSURE
         //this.jLabelOrder.setText(theMovie.getOrderItem());
-        /* THIS IS BIDDING NUMBERS 
-        Integer startValue = 100;
-        Integer minValue = 100;
-        Integer maxValue = 10000;
-        Integer stepValue = 50;
+        /* THIS IS BIDDING NUMBERS */
+        Integer startValue = 1;
+        Integer minValue = 0;
+        Integer maxValue = 10;
+        Integer stepValue = 1;
         SpinnerModel numModel = new SpinnerNumberModel(startValue, minValue, maxValue, stepValue);
-        jSpinner1.setModel(numModel);
-        String optionsFileName = System.getProperty("user.dir")+ "M:\\reyesingridj11\\SelectContract\\src\\selectcontract\\output_bids.txt";
-        */
+        jSpinnerChild.setModel(numModel);
+        
+        //int totalForChild = jSpinnerChild.getValue().toString() * 7.99;
+        //String optionsFileName = System.getProperty("user.dir")+ "M:\\reyesingridj11\\SelectContract\\src\\selectcontract\\output_bids.txt";
+        
     }
 
     /**
@@ -51,8 +53,7 @@ public class ConfirmBuy extends javax.swing.JDialog {
 
         jLabelMovieName = new javax.swing.JLabel();
         jLabelRate = new javax.swing.JLabel();
-        jLabelDestination = new javax.swing.JLabel();
-        jTextEmail = new javax.swing.JTextField();
+        jLabelActors = new javax.swing.JLabel();
         jSpinnerChild = new javax.swing.JSpinner();
         jButtonSave = new javax.swing.JButton();
         jButtonCancel = new javax.swing.JButton();
@@ -61,7 +62,6 @@ public class ConfirmBuy extends javax.swing.JDialog {
         jSpinnerAdult = new javax.swing.JSpinner();
         jLabelSenior = new javax.swing.JLabel();
         jSpinnerSenior = new javax.swing.JSpinner();
-        jLabelEmail = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Place bid on selected contract");
@@ -71,13 +71,7 @@ public class ConfirmBuy extends javax.swing.JDialog {
 
         jLabelRate.setText("Rate");
 
-        jLabelDestination.setText("Destination ");
-
-        jTextEmail.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextEmailActionPerformed(evt);
-            }
-        });
+        jLabelActors.setText("Main Actors");
 
         jButtonSave.setText("Save");
 
@@ -94,17 +88,14 @@ public class ConfirmBuy extends javax.swing.JDialog {
 
         jLabelSenior.setText("Senior");
 
-        jLabelEmail.setText("Email");
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(163, 163, 163)
+                        .addGap(181, 181, 181)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabelChild, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabelAdult)
@@ -113,16 +104,13 @@ public class ConfirmBuy extends javax.swing.JDialog {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jSpinnerChild, javax.swing.GroupLayout.DEFAULT_SIZE, 47, Short.MAX_VALUE)
                             .addComponent(jSpinnerAdult)
-                            .addComponent(jSpinnerSenior)))
+                            .addComponent(jSpinnerSenior))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
                         .addComponent(jButtonSave)
                         .addGap(18, 18, 18)
-                        .addComponent(jButtonCancel))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabelEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jTextEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(9, 9, 9)))
+                        .addComponent(jButtonCancel)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addGap(0, 10, Short.MAX_VALUE)
@@ -130,7 +118,7 @@ public class ConfirmBuy extends javax.swing.JDialog {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 120, Short.MAX_VALUE)
                 .addComponent(jLabelRate, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(87, 87, 87)
-                .addComponent(jLabelDestination, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jLabelActors, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(111, 111, 111))
         );
         layout.setVerticalGroup(
@@ -144,7 +132,7 @@ public class ConfirmBuy extends javax.swing.JDialog {
                             .addComponent(jLabelRate, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGap(47, 47, 47)
-                        .addComponent(jLabelDestination, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jLabelActors, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabelChild)
@@ -154,14 +142,10 @@ public class ConfirmBuy extends javax.swing.JDialog {
                     .addComponent(jLabelAdult)
                     .addComponent(jSpinnerAdult, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabelSenior)
-                    .addComponent(jSpinnerSenior, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(77, 77, 77)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabelEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 102, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jSpinnerSenior, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabelSenior))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 199, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButtonCancel)
                     .addComponent(jButtonSave))
@@ -170,11 +154,11 @@ public class ConfirmBuy extends javax.swing.JDialog {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+/*
     private void JTextNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTextNameActionPerformed
-        // TODO add your handling code here:
+        // TODO add your handlifdfng code here:
     }//GEN-LAST:event_JTextNameActionPerformed
-
+*/
     private void jButtonCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCancelActionPerformed
         // TODO add your handling code here:
         dispose();
@@ -185,15 +169,24 @@ public class ConfirmBuy extends javax.swing.JDialog {
         //step 22
        //System.out.println(jSpinner1.getValue());
        
-                    //NEEDS MODIFYING 
-       int childAmount;
-       childAmount = Integer.getInteger(jSpinnerChild.getValue().toString(), 100);
+                    //REGULAR PRICES
+        int childAmount = Integer.getInteger(jSpinnerChild.getValue().toString(), 100) * 8;
         String childz = jSpinnerChild.getValue().toString();
-        int adultAmount;
-        adultAmount = Integer.getInteger(jSpinnerChild.getValue().toString(), 100);
-        int seniorAmount;
-        seniorAmount = Integer.getInteger(jSpinnerChild.getValue().toString(), 100);
+        int adultAmount= Integer.getInteger(jSpinnerAdult.getValue().toString(), 100) * 11;
+        int seniorAmount = Integer.getInteger(jSpinnerSenior.getValue().toString(), 100) * 9;
         /*
+        //FOR MATINEES
+        int childAmount = Integer.getInteger(jSpinnerChild.getValue().toString(), 100) * 7;
+        String childz = jSpinnerChild.getValue().toString();
+        int adultAmount= Integer.getInteger(jSpinnerAdult.getValue().toString(), 100) * 7;
+        int seniorAmount = Integer.getInteger(jSpinnerSenior.getValue().toString(), 100) * 7;
+      
+        //FOR TUESDAYS:
+        int childAmount = Integer.getInteger(jSpinnerChild.getValue().toString(), 100) * 11;
+        String childz = jSpinnerChild.getValue().toString();
+        int adultAmount= Integer.getInteger(jSpinnerAdult.getValue().toString(), 100) * 15;
+        int seniorAmount = Integer.getInteger(jSpinnerSenior.getValue().toString(), 100) * 12;
+        
         ZonedDateTime currentDate;
         currentDate = ZonedDateTime.now();
         String dates = ZonedDateTime.now().toString();
@@ -203,28 +196,27 @@ public class ConfirmBuy extends javax.swing.JDialog {
         
         //THIS IS ORDER SUMMARY 
         try {
-        FileWriter fileWriter = new FileWriter(filename);
-        BufferedWriter br = new BufferedWriter(fileWriter);
-        //customer name
-        // DO WE NEED THIS? String name = JTextName.getText();
-        String movieName = jLabelMovieName.getText();
-        //String rate= jLabelRate.getText();
-        //String total = jLabelTotal.getText();
-        String email = jTextEmail.toString();
-        //br.append(name);
-        br.append(movieName);
-        //WE ADDED THIS 
-        br.append(email);
-        //NEED TO APPEND QUANTITY AND TOTAL 
-        //br.append(total);
-        //br.append(bids); CHANGE
-        //br.append(dates); CHANGE
-        fileWriter.close();
+            FileWriter fileWriter = new FileWriter(filename);
+            BufferedWriter br = new BufferedWriter(fileWriter);
+            //customer name
+            // DO WE NEED THIS? String name = JTextName.getText();
+            String movieName = jLabelMovieName.getText();
+            //String rate= jLabelRate.getText();
+            //String total = jLabelTotal.getText();
+            //String email = jTextEmail.toString();
+            //br.append(name);
+            br.append(movieName);
+            //WE ADDED THIS 
+            //br.append(email);
+            //NEED TO APPEND QUANTITY AND TOTAL 
+            //br.append(total);
+            //br.append(bids); CHANGE
+            //br.append(dates); CHANGE
+            fileWriter.close();
        
-        }
-        catch(IOException ex){
+        } catch(IOException ex){
             System.out.println(ex.getMessage());
-            }
+        }
     
     }//GEN-LAST:event_jButtonSaveActionPerformed
 
@@ -236,16 +228,14 @@ public class ConfirmBuy extends javax.swing.JDialog {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonCancel;
     private javax.swing.JButton jButtonSave;
+    private javax.swing.JLabel jLabelActors;
     private javax.swing.JLabel jLabelAdult;
     private javax.swing.JLabel jLabelChild;
-    private javax.swing.JLabel jLabelDestination;
-    private javax.swing.JLabel jLabelEmail;
     private javax.swing.JLabel jLabelMovieName;
     private javax.swing.JLabel jLabelRate;
     private javax.swing.JLabel jLabelSenior;
     private javax.swing.JSpinner jSpinnerAdult;
     private javax.swing.JSpinner jSpinnerChild;
     private javax.swing.JSpinner jSpinnerSenior;
-    private javax.swing.JTextField jTextEmail;
     // End of variables declaration//GEN-END:variables
 }

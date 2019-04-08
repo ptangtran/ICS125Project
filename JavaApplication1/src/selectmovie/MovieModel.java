@@ -31,7 +31,7 @@ class MovieModel {
         movieCounter=0;
         theMovies=new ArrayList<>();
         
-        String filename="M:\\MovieSystem\\ICS125Project\\JavaApplication1\\src\\selectmovie\\movies.txt";
+        String filename="M:\\125Sadness\\ICS125Project\\JavaApplication1\\src\\selectmovie\\movies.txt";
     try {
         FileReader fileReader = new FileReader(filename);
         BufferedReader bufferedReader = new BufferedReader(fileReader);
@@ -107,7 +107,8 @@ class MovieModel {
     public void updateMovieList(String movie){
         //theContracts = new ArrayList<>(theContractsAll);
         theMovies = new ArrayList<>(theMoviesAll);
-        if (!movie.equals("All")){
+        if (movie != "All") {
+        //if (!movie.equals("All")){
             theMovies.removeIf(s -> !s.contains(movie));
         }
         // lynda suggestion 

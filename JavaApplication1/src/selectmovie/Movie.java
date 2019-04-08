@@ -44,7 +44,7 @@ public class Movie {
     //boolean contains(String city) {
         //if(city.equals(originCity)) {
     boolean contains(String movie) {
-        if(movie.equals(movie)) {
+        if(movieName.equals(movie)) {
             return true;
         }
         else{
