@@ -91,13 +91,13 @@ public class MovieView extends javax.swing.JFrame {
 
         jPanel2.setBackground(java.awt.Color.pink);
 
-        jLabel1.setText("Contact ID:");
+        jLabel1.setText("Movie Name");
 
         jLabel2.setText("Rate:");
 
         jLabel3.setText("Actors:");
 
-        JLabelMovieCount.setText("n out of x Contracts");
+        JLabelMovieCount.setText("n out of x Movies");
 
         JLabelRate.setText(" ");
 
@@ -239,7 +239,7 @@ public class MovieView extends javax.swing.JFrame {
     }
     
     void updateMovieViewPanel(int currentMovieNum, int movieCount){
-        setMovieCount((1+currentMovieNum)+ " of " + movieCount + " contracts");
+        setMovieCount((1+currentMovieNum)+ " of " + movieCount + " movies");
         if(currentMovieNum==0){
             this.JPrevButton.setEnabled(false);
         }else{

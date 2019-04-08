@@ -199,7 +199,7 @@
       <SubComponents>
         <Component class="javax.swing.JLabel" name="jLabel1">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Contact ID:"/>
+            <Property name="text" type="java.lang.String" value="Movie Name"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel2">
@@ -214,7 +214,7 @@
         </Component>
         <Component class="javax.swing.JLabel" name="JLabelMovieCount">
           <Properties>
-            <Property name="text" type="java.lang.String" value="n out of x Contracts"/>
+            <Property name="text" type="java.lang.String" value="n out of x Movies"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="JLabelMovieName">
