@@ -5,9 +5,11 @@
  */
 package selectmovie;
 
+import java.awt.event.ItemListener;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
+import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.SpinnerModel;
 import javax.swing.SpinnerNumberModel;
@@ -25,7 +27,7 @@ public class ConfirmBuy extends javax.swing.JDialog {
         super(f, m);
         initComponents();
         this.jLabelMovieName.setText(theMovie.getMovieName());
-        this.jLabelRate.setText(theMovie.getRating());
+        this.jLabelRating.setText(theMovie.getRating());
         //this.jLabelActors.setText(theMovie.getActors()); 
         //this.jLabelOrder.setText(theMovie.getOrderItem());
         /* THIS IS BIDDING NUMBERS */
@@ -34,14 +36,23 @@ public class ConfirmBuy extends javax.swing.JDialog {
         Integer maxValue = 10;
         Integer stepValue = 1;
         SpinnerModel numModel = new SpinnerNumberModel(startValue, minValue, maxValue, stepValue);
+        SpinnerModel numModel1 = new SpinnerNumberModel(startValue, minValue, maxValue, stepValue);
+        SpinnerModel numModel2 = new SpinnerNumberModel(startValue, minValue, maxValue, stepValue);
         jSpinnerChild.setModel(numModel);
-        jSpinnerAdult.setModel(numModel);
-        jSpinnerSenior.setModel(numModel);
+        jSpinnerAdult.setModel(numModel1);
+        jSpinnerSenior.setModel(numModel2);
         
+        /*
+        jComboBoxType.addItem("Tuesday");
+        jComboBoxType.addItem("Matinee");
+        jComboBoxType.addItem("Regulars");
+        */
         //int totalForChild = jSpinnerChild.getValue().toString() * 7.99;
         //String optionsFileName = System.getProperty("user.dir")+ "M:\\reyesingridj11\\SelectContract\\src\\selectcontract\\output_bids.txt";
         
     }
+    
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -53,7 +64,7 @@ public class ConfirmBuy extends javax.swing.JDialog {
     private void initComponents() {
 
         jLabelMovieName = new javax.swing.JLabel();
-        jLabelRate = new javax.swing.JLabel();
+        jLabelRating = new javax.swing.JLabel();
         jSpinnerChild = new javax.swing.JSpinner();
         jButtonSave = new javax.swing.JButton();
         jButtonCancel = new javax.swing.JButton();
@@ -63,17 +74,32 @@ public class ConfirmBuy extends javax.swing.JDialog {
         jLabelSenior = new javax.swing.JLabel();
         jSpinnerSenior = new javax.swing.JSpinner();
         jButtonCheckout = new javax.swing.JButton();
+        jLabelRate = new javax.swing.JLabel();
+        jComboBoxType = new javax.swing.JComboBox<>();
+        jLabelType = new javax.swing.JLabel();
+        jLabelChildPrice = new javax.swing.JLabel();
+        jLabelAdultPrice = new javax.swing.JLabel();
+        jLabelSeniorPrice = new javax.swing.JLabel();
+        jLabelPrice = new javax.swing.JLabel();
+        jLabelQuantity = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Place order on selected movie");
-        setBackground(new java.awt.Color(255, 204, 204));
+        setBackground(java.awt.Color.lightGray);
 
+        jLabelMovieName.setBackground(java.awt.Color.white);
+        jLabelMovieName.setFont(new java.awt.Font("Tw Cen MT Condensed", 0, 36)); // NOI18N
         jLabelMovieName.setText("Movie Name");
 
-        jLabelRate.setText("Rate");
+        jLabelRating.setFont(new java.awt.Font("Tw Cen MT Condensed", 0, 18)); // NOI18N
+        jLabelRating.setText("Rating");
 
+        jSpinnerChild.setFont(new java.awt.Font("Tw Cen MT Condensed", 0, 18)); // NOI18N
+
+        jButtonSave.setFont(new java.awt.Font("Tw Cen MT Condensed", 0, 18)); // NOI18N
         jButtonSave.setText("Save");
 
+        jButtonCancel.setFont(new java.awt.Font("Tw Cen MT Condensed", 0, 18)); // NOI18N
         jButtonCancel.setText("Cancel");
         jButtonCancel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -81,12 +107,20 @@ public class ConfirmBuy extends javax.swing.JDialog {
             }
         });
 
-        jLabelChild.setText("Child");
+        jLabelChild.setFont(new java.awt.Font("Tw Cen MT Condensed", 0, 18)); // NOI18N
+        jLabelChild.setText("Child:");
 
-        jLabelAdult.setText("Adult");
+        jLabelAdult.setFont(new java.awt.Font("Tw Cen MT Condensed", 0, 18)); // NOI18N
+        jLabelAdult.setText("Adult:");
 
-        jLabelSenior.setText("Senior");
+        jSpinnerAdult.setFont(new java.awt.Font("Tw Cen MT Condensed", 0, 18)); // NOI18N
 
+        jLabelSenior.setFont(new java.awt.Font("Tw Cen MT Condensed", 0, 18)); // NOI18N
+        jLabelSenior.setText("Senior:");
+
+        jSpinnerSenior.setFont(new java.awt.Font("Tw Cen MT Condensed", 0, 18)); // NOI18N
+
+        jButtonCheckout.setFont(new java.awt.Font("Tw Cen MT Condensed", 0, 18)); // NOI18N
         jButtonCheckout.setText("Checkout");
         jButtonCheckout.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -94,64 +128,129 @@ public class ConfirmBuy extends javax.swing.JDialog {
             }
         });
 
+        jLabelRate.setFont(new java.awt.Font("Tw Cen MT Condensed", 0, 18)); // NOI18N
+        jLabelRate.setText("Rate:");
+
+        jComboBoxType.setFont(new java.awt.Font("Tw Cen MT Condensed", 0, 18)); // NOI18N
+        jComboBoxType.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBoxType.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBoxTypeActionPerformed(evt);
+            }
+        });
+
+        jLabelType.setFont(new java.awt.Font("Tw Cen MT Condensed", 0, 18)); // NOI18N
+        jLabelType.setText("Type:");
+
+        jLabelChildPrice.setFont(new java.awt.Font("Tw Cen MT Condensed", 0, 18)); // NOI18N
+        jLabelChildPrice.setText("jLabel1");
+
+        jLabelAdultPrice.setFont(new java.awt.Font("Tw Cen MT Condensed", 0, 18)); // NOI18N
+        jLabelAdultPrice.setText("jLabel2");
+
+        jLabelSeniorPrice.setFont(new java.awt.Font("Tw Cen MT Condensed", 0, 18)); // NOI18N
+        jLabelSeniorPrice.setText("jLabel3");
+
+        jLabelPrice.setFont(new java.awt.Font("Tw Cen MT Condensed", 0, 18)); // NOI18N
+        jLabelPrice.setText("Price:");
+
+        jLabelQuantity.setFont(new java.awt.Font("Tw Cen MT Condensed", 0, 18)); // NOI18N
+        jLabelQuantity.setText("Quantity:");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(181, 181, 181)
-                .addComponent(jButtonCheckout)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButtonSave)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButtonCancel)
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(38, 38, 38)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabelMovieName, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jLabelChild, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabelAdult)
-                        .addComponent(jLabelSenior)))
+                .addGap(46, 46, 46)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jSpinnerChild, javax.swing.GroupLayout.DEFAULT_SIZE, 47, Short.MAX_VALUE)
-                            .addComponent(jSpinnerAdult)
-                            .addComponent(jSpinnerSenior))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(jLabelMovieName, javax.swing.GroupLayout.PREFERRED_SIZE, 316, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 95, Short.MAX_VALUE)
+                        .addComponent(jLabelRating, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 125, Short.MAX_VALUE)
-                        .addComponent(jLabelRate, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(187, 187, 187))))
+                        .addComponent(jLabelType)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(50, 50, 50)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addGroup(layout.createSequentialGroup()
+                                            .addGap(20, 20, 20)
+                                            .addComponent(jButtonCheckout)
+                                            .addGap(44, 44, 44)
+                                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                                .addGroup(layout.createSequentialGroup()
+                                                    .addComponent(jLabelChildPrice)
+                                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                    .addComponent(jSpinnerChild, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                .addComponent(jSpinnerAdult, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(jSpinnerSenior, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addGroup(layout.createSequentialGroup()
+                                                    .addComponent(jButtonSave)
+                                                    .addGap(48, 48, 48)
+                                                    .addComponent(jButtonCancel))))
+                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                            .addComponent(jLabelRate)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(jLabelQuantity, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabelChild, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(jLabelAdult)
+                                            .addComponent(jLabelSenior))
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addGap(78, 78, 78)
+                                                .addComponent(jLabelPrice))
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addGap(78, 78, 78)
+                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                    .addComponent(jLabelSeniorPrice)
+                                                    .addComponent(jLabelAdultPrice)))))))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(18, 18, 18)
+                                .addComponent(jComboBoxType, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addGap(66, 66, 66))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(49, 49, 49)
+                .addGap(17, 17, 17)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabelMovieName, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabelRate, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                    .addComponent(jLabelMovieName, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabelRating, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(31, 31, 31)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabelType)
+                    .addComponent(jComboBoxType, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(21, 21, 21)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabelQuantity, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabelPrice)
+                    .addComponent(jLabelRate))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 50, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabelChild)
+                    .addComponent(jLabelChildPrice)
                     .addComponent(jSpinnerChild, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addGap(27, 27, 27)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabelAdult)
+                    .addComponent(jLabelAdultPrice)
                     .addComponent(jSpinnerAdult, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jSpinnerSenior, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabelSenior))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 103, Short.MAX_VALUE)
+                .addGap(27, 27, 27)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabelSenior)
+                    .addComponent(jLabelSeniorPrice)
+                    .addComponent(jSpinnerSenior, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 90, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButtonCheckout)
                     .addComponent(jButtonSave)
-                    .addComponent(jButtonCancel)
-                    .addComponent(jButtonCheckout))
-                .addGap(135, 135, 135))
+                    .addComponent(jButtonCancel))
+                .addGap(59, 59, 59))
         );
 
         pack();
@@ -176,6 +275,7 @@ public class ConfirmBuy extends javax.swing.JDialog {
         String childz = jSpinnerChild.getValue().toString();
         int adultAmount= Integer.getInteger(jSpinnerAdult.getValue().toString(), 100) * 11;
         int seniorAmount = Integer.getInteger(jSpinnerSenior.getValue().toString(), 100) * 9;
+     
         /*
         //FOR MATINEES
         int childAmount = Integer.getInteger(jSpinnerChild.getValue().toString(), 100) * 7;
@@ -189,9 +289,6 @@ public class ConfirmBuy extends javax.swing.JDialog {
         int adultAmount= Integer.getInteger(jSpinnerAdult.getValue().toString(), 100) * 15;
         int seniorAmount = Integer.getInteger(jSpinnerSenior.getValue().toString(), 100) * 12;
         
-        ZonedDateTime currentDate;
-        currentDate = ZonedDateTime.now();
-        String dates = ZonedDateTime.now().toString();
         */
         //String filename ="\\src\\selectcontract\\output_bid.txt";
         String filename ="M:\\125Sadness\\ICS125Project\\JavaApplication1\\src\\selectmovie\\output_movie.txt";
@@ -200,14 +297,15 @@ public class ConfirmBuy extends javax.swing.JDialog {
         try {
             FileWriter fileWriter = new FileWriter(filename);
             BufferedWriter br = new BufferedWriter(fileWriter);
-            //customer name
-            // DO WE NEED THIS? String name = JTextName.getText();
+            
             String movieName = jLabelMovieName.getText();
+            // ArrayList<> priceType = jComboBoxType<>.getText();
             //String rate= jLabelRate.getText();
             //String total = jLabelTotal.getText();
             //String email = jTextEmail.toString();
             //br.append(name);
             br.append(movieName);
+            //br.append(priceType);
             //WE ADDED THIS 
             //br.append(email);
             //NEED TO APPEND QUANTITY AND TOTAL 
@@ -226,20 +324,40 @@ public class ConfirmBuy extends javax.swing.JDialog {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButtonCheckoutActionPerformed
 
+    private void jComboBoxTypeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxTypeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBoxTypeActionPerformed
+    
+    /*
+    // ADD COMBO BOX LISTENER FOR TYPE OF PRICES 
+    void addcomboBoxListener(ItemListener listenForComboBox){
+        jComboBoxType.addItemListener(listenForComboBox);
+    } */
+  //JComboBox comboBox = new JComboBox();
     /**
      * @param args the command line arguments
      */
+   
+    
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonCancel;
     private javax.swing.JButton jButtonCheckout;
     private javax.swing.JButton jButtonSave;
+    private javax.swing.JComboBox<String> jComboBoxType;
     private javax.swing.JLabel jLabelAdult;
+    private javax.swing.JLabel jLabelAdultPrice;
     private javax.swing.JLabel jLabelChild;
+    private javax.swing.JLabel jLabelChildPrice;
     private javax.swing.JLabel jLabelMovieName;
+    private javax.swing.JLabel jLabelPrice;
+    private javax.swing.JLabel jLabelQuantity;
     private javax.swing.JLabel jLabelRate;
+    private javax.swing.JLabel jLabelRating;
     private javax.swing.JLabel jLabelSenior;
+    private javax.swing.JLabel jLabelSeniorPrice;
+    private javax.swing.JLabel jLabelType;
     private javax.swing.JSpinner jSpinnerAdult;
     private javax.swing.JSpinner jSpinnerChild;
     private javax.swing.JSpinner jSpinnerSenior;
