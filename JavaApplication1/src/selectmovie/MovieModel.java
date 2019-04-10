@@ -24,6 +24,8 @@ class MovieModel {
     //private SortedSet<String> originCityList;
     private SortedSet<String> movieList;
     
+    //private ArrayList<Movie> typeList; // ARRAY LIST FOR TYPES OF PRICES 
+    
    
     
     public MovieModel(){
@@ -115,5 +117,6 @@ class MovieModel {
         //System.out.print(city);
         movieCounter=0;
     }
+    
   
 }

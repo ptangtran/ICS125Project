@@ -105,6 +105,12 @@ class MovieController {
                theModel.updateMovieList(selectedMovie);
                setUpDisplay();
            } //end if
+          /* if(e.getStateChange() == ItemEvent.SELECTED){
+               String selectedType = e.getItem().toString();
+               System.out.println(selectedType);
+               theModel.updateMovieType(selectedType);
+               setUpType();
+           }select type*/
        } // end itemStateChanged
    } // end ComboListener
    
