@@ -1,0 +1,9 @@
+regular,Child,8
+regular,Adult,11
+regular,Senior,10
+matinee,Child,7
+matinee,Adult,7
+matinee,Senior,7
+tuesday,Child,10
+tuesday,Adult,14
+tuesday,Seniors,12
