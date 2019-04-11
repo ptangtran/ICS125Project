@@ -125,6 +125,11 @@ public class MovieView extends javax.swing.JFrame {
 
         JBuyButton.setFont(new java.awt.Font("Tw Cen MT Condensed", 0, 24)); // NOI18N
         JBuyButton.setText("Buy");
+        JBuyButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JBuyButtonActionPerformed(evt);
+            }
+        });
 
         JNextButton.setFont(new java.awt.Font("Tw Cen MT Condensed", 0, 24)); // NOI18N
         JNextButton.setText("Next");
@@ -147,9 +152,7 @@ public class MovieView extends javax.swing.JFrame {
                             .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(0, 0, 0)
-                                .addComponent(JLabelActors, javax.swing.GroupLayout.PREFERRED_SIZE, 391, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(JLabelActors, javax.swing.GroupLayout.PREFERRED_SIZE, 391, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addGap(13, 13, 13)
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -174,9 +177,9 @@ public class MovieView extends javax.swing.JFrame {
                     .addComponent(JLabelMovieName, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(JLabelRate, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(JLabelRate, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(59, 59, 59)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(JLabelActors, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -227,6 +230,10 @@ public class MovieView extends javax.swing.JFrame {
     private void JNextButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JNextButtonActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_JNextButtonActionPerformed
+
+    private void JBuyButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBuyButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_JBuyButtonActionPerformed
 
     /**
      * @param args the command line arguments
